@@ -1,12 +1,31 @@
+{% load static %}
 <!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  {% block content %}
-  {% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block title %}Smile Care{% endblock title %}</title>
+
+  </head>
+  <body>
+    <header>
+      {% include 'navbar.html' %}
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      {% include 'footer.html' %}
+    </footer>
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+
+    <script src="{% static 'base.js' %}"></script>
+
+  </body>
 </html>

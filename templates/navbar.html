@@ -1,24 +1,27 @@
 {% load static %}
 
-<nav class="bg-yellow-100 shadow-md mx-16 my-4 py-4">
+<nav class="bg-primary shadow-md mx-16 my-4 py-4 rounded-full">
     <div class="container mx-auto flex justify-between items-center px-8">
         
         <!-- Logo -->
-        <div class="text-xl font-bold text-gray-800">
-            <a href="#">Logo</a>
+        <div>
+          
+            <a href="/"> 
+            <img class="w-36 h-auto object-cover" src="{% static 'logo.png' %}" alt="logo">
+            </a>
         </div>
         
         <!-- Desktop Menu Links -->
-        <ul class="hidden md:flex space-x-8 text-gray-600">
-            <li><a href="#" class="hover:text-blue-600">Home</a></li>
-            <li><a href="#" class="hover:text-blue-600">About</a></li>
-            <li><a href="#" class="hover:text-blue-600">Services</a></li>
-            <li><a href="#" class="hover:text-blue-600">Contact</a></li>
+        <ul class="hidden md:flex space-x-10 text-gray-600">
+            <li><a href="{% url 'home' %}" class="font-medium text-base text-dark hover:text-gray-600 {% if request.path == '/' %}active-link{% endif %}">Home</a></li>
+            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">About</a></li>
+            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">Services</a></li>
+            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">Contact</a></li>
         </ul>
         
         <!-- Right Button for Desktop -->
         <div>
-            <a href="#" class="hidden md:inline-block px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded">Get Started</a>
+            <a href="#" class="hidden md:inline-block px-4 py-2 text-dark bg-secondary hover:bg-[#86d676] rounded">Get Started</a>
         </div>
 
         <!-- Mobile Menu Button -->

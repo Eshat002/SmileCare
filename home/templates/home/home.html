@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <h1>Home</h2>
+ {% block content %}
+<c-hero headline="headline"  subHeadline="subHeadline">
 
-{% endblock content %}
+<c-bookBtn />
+<c-emergencyCard />
+</c-hero>
+  
 
+ {% endblock content %}

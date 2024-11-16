@@ -30,7 +30,9 @@ INSTALLED_APPS = [
     #third party 
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'django_cotton',
+  
 ]
 
 TAILWIND_APP_NAME = 'theme'

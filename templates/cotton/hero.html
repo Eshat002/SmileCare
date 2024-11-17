@@ -1,5 +1,23 @@
-<section class="bg-red-200">
-<h1>{{headline}}</h1>
-<p>{{subHeadline}}</p>
- {{slot}}
+{% load static %}
+<section class="lg:mx-16 mx-4 my-10">
+    <div class="container mx-auto px-8 flex justify-between items-start">
+ <!-- left div -->
+        <div>
+            <div class="headline-container">
+                {{headline}}
+            </div>
+            <div class="sub-headline-container">
+                <p class="text-gray text-lg text-balance font-normal">{{subHeadline}}</p>
+            </div>
+            <div class="cta">
+                      {{cta}}
+            </div>
+      
+        </div>
+    <!--right div-->
+        <div>
+            <img class="rounded-3xl object-cover w-full h-auto" src="{% static 'Images/heroImage.jpg' %}" alt="hero-image">
+        </div>
+
+    </div>
 </section>

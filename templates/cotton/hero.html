@@ -1,22 +1,22 @@
 {% load static %}
-<section class="lg:mx-16 mx-4 my-12">
-    <div class="container mx-auto px-8 flex justify-between items-start ">
+<section class="lg:mx-16 mx-0 lg:my-12 sm:my-8 my-3">
+    <div class="container mx-auto sm:px-8 px-6 flex lg:flex-row sm:gap-6 gap-4 flex-col-reverse justify-between sm:items-start items-center">
  <!-- left div -->
         <div class="flex flex-col gap-4">
-            <h2 class="text-dark font-bold text-6xl text-balance leading-tight">Get ready for your best ever Dental <br /> <span class="text-secondary">Experience!</span></h2>
+            <h2 class="text-dark font-bold xl:text-6xl text-4xl text-balance leading-tight">Get ready for your best ever Dental <br class="lg:block hidden" /> <span class="text-secondary">Experience!</span></h2>
 
        
                 <p class="text-gray text-lg text-balance font-normal">We use only the best quality materials on the market in order to provide the best products to our patients, So don’t worry about anything and book yourself.</p>
           <!--cta-->
-            <div class="flex gap-4 mt-3">
+            <div class="flex flex-col sm:flex-row gap-4 mt-3">
                 <c-bookBtn />
                 <c-emergencyCard />
             </div>
       
         </div>
     <!--right div-->
-        <div>
-            <img class="rounded-3xl object-cover w-full h-auto" src="{% static 'Images/heroImage.jpg' %}" alt="hero-image">
+        <div class="">
+            <img class="rounded-3xl object-cover lg:w-full w-full h-auto" src="{% static 'Images/heroImage.jpg' %}" alt="hero-image">
         </div>
 
     </div>

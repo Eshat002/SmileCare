@@ -1,6 +1,19 @@
 {% load static %}
-<section class="service bg-primary lg:mx-16 mx-4">
+<section class="service bg-primary lg:mx-16 mx-4 flex p-10 gap-8 rounded-xl">
+
+    <!--serviceCard-->
 <c-serviceCard title="Root Canal Treatment" text="Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth." >  
     <c-slot name="rootCanal"><img class="w-20 h-20 object-cover" src="{% static 'Images/Icons/rootCanal.png' %}" alt="root-canal"></c-slot>
 </c-serviceCard>
+
+<!--serviceCard-->
+<c-serviceCard title="Root Canal Treatment" text="Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth." >  
+    <c-slot name="rootCanal"><img class="w-20 h-20 object-cover" src="{% static 'Images/Icons/cosmetic.png' %}" alt="root-canal"></c-slot>
+</c-serviceCard>
+
+<!--serviceCard-->
+<c-serviceCard title="Root Canal Treatment" text="Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth." >  
+    <c-slot name="rootCanal"><img class="w-20 h-20 object-cover" src="{% static 'Images/Icons/implant.png' %}" alt="root-canal"></c-slot>
+</c-serviceCard>
+
 </section>

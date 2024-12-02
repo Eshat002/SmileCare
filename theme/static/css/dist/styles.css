@@ -916,14 +916,6 @@ select {
   gap: 2rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.gap-10 {
-  gap: 2.5rem;
-}
-
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -997,11 +989,6 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1072,11 +1059,6 @@ select {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1100,11 +1082,6 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -1131,28 +1108,8 @@ select {
   line-height: 1.5;
 }
 
-.leading-tight {
-  line-height: 1.25;
-}
-
-.leading-10 {
-  line-height: 2.5rem;
-}
-
 .leading-snug {
   line-height: 1.375;
-}
-
-.leading-\[100px\] {
-  line-height: 100px;
-}
-
-.leading-\[50px\] {
-  line-height: 50px;
-}
-
-.leading-5 {
-  line-height: 1.25rem;
 }
 
 .tracking-normal {
@@ -1289,16 +1246,6 @@ select {
     margin-bottom: 3rem;
   }
 
-  .lg\:mx-14 {
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-  }
-
-  .lg\:mx-12 {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-
   .lg\:block {
     display: block;
   }
@@ -1326,10 +1273,5 @@ select {
   .xl\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .xl\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 }

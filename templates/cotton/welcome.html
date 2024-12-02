@@ -1,18 +1,26 @@
+{% load static %}
 <section class="lg:mx-16 mx-0 lg:my-12 sm:my-8 my-3">
-    <div class="container mx-auto sm:px-8 px-6 flex lg:flex-row sm:gap-6 gap-4 flex-col-reverse justify-between sm:items-start items-center">
- <!-- left div -->
-        <div class="">
-         <c-gHeadline >
-            <h2 class="font-semibold text-4xl text-dark capitalize leading-snug">
-                We’re welcoming new patients <br> and <span class="text-secondary"> can’t   wait to meet you.</span> 
-            </h2>
-        </c-gHeadline>
-
-        </div>
-    <!--right div-->
-        <div class="">
-            right
-        </div>
-
+  <div
+    class="container mx-auto sm:px-8 px-6 flex lg:flex-row sm:gap-6 gap-4 flex-col-reverse justify-between sm:items-start items-center"
+  >
+    <!-- left div -->
+    <div>
+      <c-gHeadline>
+        <h2 class="font-semibold text-4xl text-dark capitalize leading-snug">
+          We’re welcoming new patients <br />
+          and <span class="text-secondary"> can’t wait to meet you.</span>
+        </h2>
+      </c-gHeadline>
+      <p class="font-normal text-lg text-gray">
+        We use only the best quality materials on the market in order to provide
+        the best products to our patients, So don’t worry about anything and
+        book yourself.
+      </p>
+      <c-phoneNumberForm />
     </div>
+    <!--right div-->
+    <div>
+      <img src="{% static 'Images/welcomeImage.png' %}" alt="welcome-image" />
+    </div>
+  </div>
 </section>

@@ -1,33 +1,29 @@
 {% load static tailwind_tags %}
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
     <title>{% block title %}Smile Care{% endblock title %}</title>
     {% tailwind_css %}
     <script src="https://unpkg.com/htmx.org"></script>
   </head>
   <body>
-    <header>
-      {% include 'navbar.html' %}
-    </header>
-    <main>
-      {% block content %}
-      {% endblock %}
-    </main>
-    <footer>
-      {% include 'footer.html' %}
-    </footer>
+    <header>{% include 'navbar.html' %}</header>
+    <main>{% block content %} {% endblock %}</main>
+    <footer>{% include 'footer.html' %}</footer>
 
-    {% block scripts %}
-
-    {% endblock scripts %}
+    {% block scripts %} {% endblock scripts %}
 
     <script src="{% static 'base.js' %}"></script>
-
   </body>
 </html>

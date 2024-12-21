@@ -1,15 +1,28 @@
-<div>
+<!-- <div>
   <form action="">
-    <c-icons.phone />
+     <c-icons.phone /> 
+    <input type="text" id="name" name="name" placeholder="Enter Your Name" />
     <input
       type="tel"
       id="phone"
       name="phone"
       placeholder="Enter your Phone Number"
       pattern="(\+?\d{1,4}[\s\-]?)?(\(?\d{1,4}\)?[\s\-]?)?\d{1,4}[\s\-]?\d{1,4}[\s\-]?\d{1,4}"
-      required
     />
 
-    <button type="submit">Submit</button>
+    <button class="bg-green-200 px-4 py-2" type="submit">Submit</button>
   </form>
-</div>
+</div> -->
+
+<div id="form-container">{% include 'partials/contact_form.html' %}</div>
+
+<script>
+  document.body.addEventListener("htmx:afterOnLoad", function (event) {
+    if (
+      event.detail.xhr.responseText.includes("Form submitted successfully!")
+    ) {
+      document.getElementById("success-message").innerText =
+        "Form submitted successfully!";
+    }
+  });
+</script>

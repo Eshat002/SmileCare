@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     #third party 
+    "django_htmx",
     'tailwind',
     'theme',
     'django_browser_reload',
@@ -48,6 +49,7 @@ NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 
 MIDDLEWARE = [
+    "django_htmx.middleware.HtmxMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_browser_reload.middleware.BrowserReloadMiddleware',
-
+    
 ]
 
 ROOT_URLCONF = 'main.urls'

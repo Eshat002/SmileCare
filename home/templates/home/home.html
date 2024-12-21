@@ -1,18 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="hero-container">
+  <c-hero />
+</div>
 
-{% block content %}
-    <div class="hero-container">
-        <c-hero  />
-    </div>
-
-    <div class="service-container mt-20">
-        <c-service />
-    </div>
-
-    <div class="welcome-container">
-        <c-welcome />
-    </div>
-
-
+<div class="service-container mt-20">
+  <c-service />
+</div>
+<div class="welcome-container">
+  <c-welcome />
+</div>
 
 {% endblock content %}

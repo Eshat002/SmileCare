@@ -16,6 +16,7 @@
         the best products to our patients, So don’t worry about anything and
         book yourself.
       </p>
+
       <c-phoneNumberForm />
     </div>
     <!--right div-->
@@ -24,3 +25,14 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.body.addEventListener("htmx:afterOnLoad", function (event) {
+    if (
+      event.detail.xhr.responseText.includes("Form submitted successfully!")
+    ) {
+      document.getElementById("success-message").innerText =
+        "Form submitted successfully!";
+    }
+  });
+</script>

@@ -3,28 +3,11 @@ from django.http import JsonResponse
 from .forms import ContactForm
 from .models import Contact
 
+
+
 def home(request):
     context={'form':ContactForm}
     return render(request, 'home/home.html',context)
-
-
-
-def contact_page(request):
-    context = {'form': ContactForm()}
-    return render(request, 'home/contact.html', context )
-
-
-
-
-def product(request):
-    products = [
-        {"name": "apple"},
-        {"name": "banana"},
-        {"name": "cherry"}
-    ]
-    return JsonResponse({"products": products})
-
-
 
  
 #model form view

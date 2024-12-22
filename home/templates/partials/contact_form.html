@@ -1,9 +1,51 @@
+<!-- regular form -->
+<!-- <form
+  method="POST"
+  hx-post="/contact/"
+  hx-target="#form-container"
+  hx-swap="outerHTML"
+>
+  {% csrf_token %}
+
+  <div>
+    <label for="id_name">Name:</label>
+    {{ form.name }} {% for error in form.name.errors %}
+    <div class="text-red-500">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <div>
+    <label for="id_phone">Phone:</label>
+    {{ form.phone }} {% for error in form.phone.errors %}
+    <div class="text-red-500">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <button type="submit" class="bg-blue-500 px-4 py-2 text-white">Submit</button>
+</form> -->
+
+<!-- model form -->
 <form
   method="POST"
-  hx-post="{% url 'contact_form_view' %}"
+  hx-post="/contact/"
   hx-target="#form-container"
-  hx-swap="innerHTML"
+  hx-swap="outerHTML"
 >
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit" class="bg-green-200 px-4 py-2">Submit</button>
+  {% csrf_token %}
+
+  <div>
+    <label for="id_name">Name:</label>
+    {{ form.name }} {% for error in form.name.errors %}
+    <div class="text-red-500">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <div>
+    <label for="id_phone">Phone:</label>
+    {{ form.phone }} {% for error in form.phone.errors %}
+    <div class="text-red-500">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <button type="submit" class="bg-blue-500 px-4 py-2 text-white">Submit</button>
 </form>

@@ -1,9 +1,72 @@
 <!-- combined form -->
-{% if message %}
-<div id="success-message" class="text-green-500">{{ message }}</div>
-{% endif %}
 
 <form
+  method="POST"
+  hx-post="/contact/"
+  hx-target="#form-container"
+  hx-swap="innerHTML"
+  hx-trigger="submit"
+  class="max-w-sm border border-green-200 shadow-green-200 shadow-md p-6 bg-white rounded-lg"
+>
+  {% csrf_token %}
+
+  <div class="mb-4">
+    <label for="id_name" class="block text-sm font-medium text-gray-700 mb-1">
+      Name:
+    </label>
+    <input
+      type="text"
+      name="name"
+      id="id_name"
+      placeholder="Enter Your Name"
+      value="{{ form.name.value|default:'' }}"
+      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-0 focus:border-gray-300"
+    />
+    {% for error in form.name.errors %}
+    <div class="text-red-500 text-sm mt-1">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  <div class="mb-4">
+    <label for="id_phone" class="block text-sm font-medium text-gray-700 mb-1">
+      Phone:
+    </label>
+    <input
+      type="text"
+      name="phone"
+      id="id_phone"
+      placeholder="Enter Your Phone Number"
+      value="{{ form.phone.value|default:'' }}"
+      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-0 focus:border-gray-300"
+    />
+    {% for error in form.phone.errors %}
+    <div class="text-red-500 text-sm mt-1">{{ error }}</div>
+    {% endfor %}
+  </div>
+
+  {% if message %}
+  <div id="success-message" class="text-green-500 text-sm font-medium mb-4">
+    {{ message }}
+  </div>
+  {% endif %}
+
+  <button
+    type="submit"
+    class="w-full bg-secondary hover:bg-[#86d676] text-dark font-semibold py-2 px-4 rounded-lg focus:outline-none focus:ring-0"
+  >
+    Submit
+  </button>
+</form>
+
+{% if clear_form %}
+<script>
+  // Clear the form fields after successful submission
+  document.querySelector("#id_name").value = "";
+  document.querySelector("#id_phone").value = "";
+</script>
+{% endif %}
+
+<!-- <form
   method="POST"
   hx-post="/contact/"
   hx-target="#form-container"
@@ -35,12 +98,16 @@
       id="id_phone"
       placeholder="Enter Your Phone Number"
       value="{{ form.phone.value|default:'' }}"
-      class="form-input"
+      class="border border-red-200"
     />
     {% for error in form.phone.errors %}
     <div class="text-red-500">{{ error }}</div>
     {% endfor %}
   </div>
+
+  {% if message %}
+  <div id="success-message" class="text-green-500">{{ message }}</div>
+  {% endif %}
 
   <button type="submit" class="bg-blue-500 px-4 py-2 text-white">Submit</button>
 </form>
@@ -51,7 +118,7 @@
   document.querySelector("#id_name").value = "";
   document.querySelector("#id_phone").value = "";
 </script>
-{% endif %}
+{% endif %} -->
 
 <!-- regular form -->
 <!-- <form

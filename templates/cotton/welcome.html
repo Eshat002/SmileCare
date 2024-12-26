@@ -1,27 +1,31 @@
 {% load static %}
-<section class="lg:mx-16 mx-0 lg:my-12 sm:my-8 my-3">
+<section class="lg:mx-24 mx-0 lg:my-12 sm:my-8 my-3">
   <div
-    class="container mx-auto sm:px-8 px-6 flex lg:flex-row sm:gap-6 gap-4 flex-col-reverse justify-between sm:items-start items-center"
+    class="container mx-auto sm:px-8 flex flex-col-reverse lg:flex-row sm:gap-6 gap-4 justify-between sm:items-start"
   >
     <!-- left div -->
-    <div>
+    <div class="flex gap-4 flex-col">
       <c-gHeadline>
-        <h2 class="font-semibold text-4xl text-dark capitalize leading-snug">
+        <h2 class="font-bold text-4xl text-dark capitalize leading-snug">
           We’re welcoming new patients <br />
           and <span class="text-secondary"> can’t wait to meet you.</span>
         </h2>
       </c-gHeadline>
-      <p class="font-normal text-lg text-gray">
-        We use only the best quality materials on the market in order to provide
-        the best products to our patients, So don’t worry about anything and
-        book yourself.
+      <p class="font-normal text-lg text-primaryGray mb-4">
+        We use only the best quality materials on the market <br />
+        in order to provide the best products to our patients, <br />
+        So don’t worry about anything and book yourself.
       </p>
 
       <c-phoneNumberForm />
     </div>
     <!--right div-->
-    <div>
-      <img src="{% static 'Images/welcomeImage.png' %}" alt="welcome-image" />
+    <div class="flex flex-col justify-center">
+      <img
+        class="w-full h-auto mt-5"
+        src="{% static 'Images/welcomeImage.png' %}"
+        alt="welcome-image"
+      />
     </div>
   </div>
 </section>

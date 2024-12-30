@@ -1,5 +1,7 @@
 {% load static %}
-<section class="lg:mx-16 mx-0 lg:my-12 sm:my-8 my-3 bg-primary rounded-xl">
+<section
+  class="lg:mx-16 mx-0 lg:my-12 sm:my-8 my-3 bg-primary rounded-xl py-14"
+>
   <div
     class="container mx-auto sm:px-8 px-4 flex flex-col-reverse lg:flex-row gap-0 justify-between items-center"
   >
@@ -8,13 +10,13 @@
       class="flex lg:justify-center justify-end items-center lg:w-1/2 w-full"
     >
       <img
-        class="xl:w-2/3 lg:w-full sm:w-1/2 w-full h-auto mt-5"
+        class="xl:w-2/3 lg:w-full sm:w-1/2 w-full h-auto"
         src="{% static 'Images/whyUsImage.png' %}"
         alt="welcome-image"
       />
     </div>
     <!-- right Div -->
-    <div class="flex flex-col gap-4 lg:w-1/2 w-full pr-20">
+    <div class="flex flex-col gap-3 lg:w-1/2 w-full pr-20">
       <c-gHeadline>
         <h2
           style="line-height: 50px"
@@ -28,17 +30,25 @@
         We use only the best quality materials on the market <br />
         in order to provide the best products to our patients.
       </p>
-      <ul>
-        <li class="flex items-center">
+      <ul class="mb-2">
+        <li
+          class="flex items-center gap-2 text-lg font-medium text-primaryGray mb-3"
+        >
           <c-icons.check /> Top quality dental team
         </li>
-        <li class="flex items-center">
+        <li
+          class="flex items-center gap-2 text-lg font-medium text-primaryGray mb-3"
+        >
           <c-icons.check /> State of the art dental services
         </li>
-        <li class="flex items-center">
+        <li
+          class="flex items-center gap-2 text-lg font-medium text-primaryGray mb-3"
+        >
           <c-icons.check /> Discount on all dental treatment
         </li>
-        <li class="flex items-center">
+        <li
+          class="flex items-center gap-2 text-lg font-medium text-primaryGray mb-3"
+        >
           <c-icons.check />Enrollment is quick and easy
         </li>
       </ul>

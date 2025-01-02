@@ -1,0 +1,35 @@
+{% load static %}
+<section class="lg:mx-20 mx-0 lg:my-12 sm:my-8 my-3 bg-gray-50">
+  <div
+    class="container mx-auto sm:px-20 px-4 flex flex-col-reverse lg:flex-row gap-0 justify-between items-center"
+  >
+    <!-- Left Div -->
+    <div class="flex flex-col gap-4 lg:w-1/2 w-full">
+      <c-gHeadline>
+        <h2
+          class="font-bold sm:text-4xl text-3xl text-dark capitalize sm:leading-snug"
+        >
+          Leave your worries at the door and
+          <span class="text-secondary">enjoy a healthier,</span> more precise
+          smile
+        </h2>
+      </c-gHeadline>
+      <p class="font-normal text-lg text-primaryGray mb-4">
+        We use only the best quality materials on the market in order to provide
+        the best products to our patients, So don’t worry about anything and
+        book yourself.
+      </p>
+      <div>
+        <c-bookBtn />
+      </div>
+    </div>
+    <!-- Right Div -->
+    <div class="flex lg:justify-end justify-end items-center lg:w-1/2 w-full">
+      <img
+        class="xl:w-2/3 lg:w-full sm:w-1/2 w-full h-auto mt-2"
+        src="{% static 'Images/heathierSmilesImage.png' %}"
+        alt="welcome-image"
+      />
+    </div>
+  </div>
+</section>

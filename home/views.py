@@ -8,6 +8,48 @@ def home(request):
     context={'form':ContactForm}
     return render(request, 'home/home.html',context)
 
+# Without request.htmx
+# def contact_form_view(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             # Save the form data to the database automatically
+#             form.save()
+
+#             # Reinitialize the form to clear input fields after successful submission
+#             form = ContactForm()
+
+#             # If the request is an HTMX request (based on a custom header)
+#             if 'HX-Request' in request.headers:
+#                 return render(request, 'partials/contact_form.html', {
+#                     'form': form,
+#                     'message': 'Form submitted successfully!',
+#                     'clear_form': True,  # Optional flag for frontend logic
+#                 })
+
+#             # For regular requests, render the full page with a success message
+#             return render(request, 'contact.html', {
+#                 'form': form,
+#                 'message': 'Form submitted successfully!',
+#             })
+
+#         # Handle form validation errors
+#         if 'HX-Request' in request.headers:
+#             return render(request, 'partials/contact_form.html', {'form': form})
+        
+#         return render(request, 'contact.html', {'form': form})
+
+#     # For GET requests, render an empty form
+#     form = ContactForm()
+    
+#     # For HTMX GET requests, return only the partial form
+#     if 'HX-Request' in request.headers:
+#         return render(request, 'partials/contact_form.html', {'form': form})
+
+#     # For normal GET requests, return the full page
+#     return render(request, 'contact.html', {'form': form})
+
+
 #  combined model view
 def contact_form_view(request):
     if request.method == 'POST':

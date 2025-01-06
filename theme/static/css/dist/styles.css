@@ -845,6 +845,10 @@ select {
   position: static;
 }
 
+.relative {
+  position: relative;
+}
+
 .mx-0 {
   margin-left: 0px;
   margin-right: 0px;
@@ -938,8 +942,8 @@ select {
   height: 5rem;
 }
 
-.h-96 {
-  height: 24rem;
+.h-60 {
+  height: 15rem;
 }
 
 .h-auto {
@@ -1392,6 +1396,10 @@ select {
     display: block;
   }
 
+  .sm\:h-96 {
+    height: 24rem;
+  }
+
   .sm\:w-1\/2 {
     width: 50%;
   }
@@ -1431,6 +1439,10 @@ select {
   .md\:my-4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .md\:mt-28 {
+    margin-top: 7rem;
   }
 
   .md\:inline-block {

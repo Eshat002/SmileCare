@@ -1,53 +1,123 @@
-<!-- Demo styles -->
-<style>
-  .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+{% load static %}
+<head>
+  <style>
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
 
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-  }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
-</style>
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
 
 <!-- Swiper -->
 <div class="swiper mySwiper">
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper mb-12">
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jacob.png' %}"
+          alt="linkedin-image"
+      /></a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jenny.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jim.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/wade.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
+    </div>
+
+    <div class="swiper-slide">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jacob.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jenny.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/jim.png' %}"
+          alt="linkedin-image"
+      /></a>
     </div>
     <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-    </div>
-    <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-    </div>
-    <div class="swiper-slide">
-      <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/shahriar-jubayer-eshat/"
+      >
+        <img
+          class="border-4 border-blue-950 rounded-2xl"
+          src="{% static 'Images/wade.png' %}"
+          alt="linkedin-image"
+        />
+      </a>
     </div>
   </div>
   <div class="swiper-pagination"></div>

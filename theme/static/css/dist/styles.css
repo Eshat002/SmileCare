@@ -1120,7 +1120,7 @@ select {
 
 .border-secondary {
   --tw-border-opacity: 1;
-  border-color: rgb(137 219 123 / var(--tw-border-opacity));
+  border-color: rgb(74 222 128 / var(--tw-border-opacity));
 }
 
 .bg-\[\#99e889\] {
@@ -1150,7 +1150,7 @@ select {
 
 .bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgb(137 219 123 / var(--tw-bg-opacity));
+  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1218,16 +1218,6 @@ select {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .pb-1 {
@@ -1341,7 +1331,7 @@ select {
 
 .text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(137 219 123 / var(--tw-text-opacity));
+  color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
 .text-white {

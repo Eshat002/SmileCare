@@ -1,0 +1,114 @@
+{% load static %}
+
+<head>
+  <style>
+    .swiper.mySwiper2 {
+      width: 320px;
+      height: 410px;
+    }
+
+    .mySwiper2 .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      padding: 0px 30px 0px 30px !important;
+      height: 400px;
+      gap: 20px;
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(1n) {
+      background-color: rgb(206, 17, 17);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(2n) {
+      background-color: rgb(0, 140, 255);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(3n) {
+      background-color: rgb(10, 184, 111);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(4n) {
+      background-color: rgb(211, 122, 7);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(5n) {
+      background-color: rgb(118, 163, 12);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(6n) {
+      background-color: rgb(180, 10, 47);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(7n) {
+      background-color: rgb(35, 99, 19);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(8n) {
+      background-color: rgb(0, 68, 255);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(9n) {
+      background-color: rgb(218, 12, 218);
+    }
+
+    .mySwiper2 .swiper-slide:nth-child(10n) {
+      background-color: rgb(54, 94, 77);
+    }
+  </style>
+</head>
+<section class="lg:my-12 sm:my-8 my-3 bg-primary py-14">
+  <div class="flex flex-col items-center gap-4 justify-center px-4">
+    <c-gHeadline>
+      <h2
+        class="font-bold sm:text-4xl text-3xl text-dark capitalize sm:leading-snug leading-10 text-center"
+      >
+        Our Happy <span class="text-secondary">Clients</span> </span>
+      </h2>
+    </c-gHeadline>
+    <p class="font-normal text-lg text-primaryGray mb-4 text-center">
+        Real Stories, Real Smiles! Hear from our happy patients about their exceptional dental care experiences. 
+    </p>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-secondary">
+          <img
+            src="{% static 'Images/patient1.png' %}"
+            alt="patient-image"
+            style="width: 60px; height: 60px; border-radius: 50%"
+          />
+
+          <p>
+            Phosfluorescently synergize covalent outsourcing through functional
+            strategic theme areas. Assertively scale strategic portals without
+            distinctive relationships. Holisticly cultivate tactical e-services
+            before fully researched sources.
+          </p>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper2", {
+    effect: "cards",
+    grabCursor: true,
+  });
+</script>

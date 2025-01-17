@@ -1,0 +1,12 @@
+{% load static %}
+<div>
+  {% for article in articles %}
+  <div>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <small>Published on {{ article.created_at }}</small>
+  </div>
+  {% empty %}
+  <p>No articles available.</p>
+  {% endfor %}
+</div>

@@ -1,56 +1,153 @@
 {% load static %}
 
-<nav class="md:bg-primary md:shadow-md lg:mx-16 mx-4 md:my-4 my-1 py-4 rounded-full">
-    <div class="container mx-auto flex justify-between items-center px-8 bg-primary md:py-0 py-4 rounded-full">
-        <!-- Logo -->
-        <div>
-            <a href="/">
-                <img class="w-36 h-auto object-cover" src="{% static 'logo.png' %}" alt="logo">
-            </a>
-        </div>
-
-        <!-- Desktop Menu Links -->
-        <ul class="hidden md:flex lg:space-x-10 space-x-6 text-gray-600">
-            <li><a href="{% url 'home' %}" class="font-medium text-base text-dark hover:text-gray-600 {% if request.path == '/' %}active-link{% endif %}">Home</a></li>
-            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">About</a></li>
-            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">Services</a></li>
-            <li><a href="#" class="font-medium text-base text-dark hover:text-gray-600">Contact</a></li>
-        </ul>
-
-        <!-- Right Button for Desktop -->
-        <div class="flex space-x-5 items-center">
-            <img class="hidden md:flex object-cover w-12 h-auto rounded-full" src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg?t=st=1731076299~exp=1731079899~hmac=8a1ceaf94552b0a683e17c2e5c50c4a569445bdde2f16b8ec3c4599fb5587f37&w=740" alt="user-avatar">
-            <a href="#" class="hidden md:inline-block px-7 py-3 text-dark font-semibold text-base bg-secondary hover:bg-[#86d676] rounded-full">Book Now</a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex space-x-2 items-center">
-            <img class="object-cover w-10 h-10 rounded-full" src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg?t=st=1731076299~exp=1731079899~hmac=8a1ceaf94552b0a683e17c2e5c50c4a569445bdde2f16b8ec3c4599fb5587f37&w=740" alt="user-avatar">
-            <button onclick="toggleMobileMenu()" class="text-gray-600 focus:outline-none">
-                <svg width="40" height="40" viewBox="0 0 48 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="50" rx="10" fill="#89DB7B"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.25 16.5C15.5 16.5 15.5 16.708 15.5 19.25V19.275C15.5 20.382 15.5 21.182 15.771 21.52C16.036 21.848 16.823 22 18.25 22C19.677 22 20.464 21.847 20.729 21.519C21 21.182 21 20.382 21 19.274C21 16.708 21 16.5 18.25 16.5M18.25 23.5C16.564 23.5 15.299 23.323 14.604 22.46C14 21.711 14 20.689 14 19.275L14.75 19.25H14C14 16.38 14.181 15 18.25 15C22.319 15 22.5 16.38 22.5 19.25C22.5 20.688 22.5 21.711 21.896 22.46C21.201 23.323 19.936 23.5 18.25 23.5" fill="#011632"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.25 16.5C26.5 16.5 26.5 16.708 26.5 19.25V19.275C26.5 20.382 26.5 21.182 26.771 21.52C27.036 21.848 27.823 22 29.25 22C30.677 22 31.464 21.847 31.729 21.519C32 21.182 32 20.382 32 19.274C32 16.708 32 16.5 29.25 16.5M29.25 23.5C27.564 23.5 26.299 23.323 25.604 22.46C25 21.711 25 20.689 25 19.275L25.75 19.25H25C25 16.38 25.181 15 29.25 15C33.319 15 33.5 16.38 33.5 19.25C33.5 20.688 33.5 21.711 32.896 22.46C32.201 23.323 30.936 23.5 29.25 23.5" fill="#011632"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.25 27.5C15.5 27.5 15.5 27.708 15.5 30.25V30.275C15.5 31.382 15.5 32.182 15.771 32.52C16.036 32.848 16.823 33 18.25 33C19.677 33 20.464 32.847 20.729 32.519C21 32.182 21 31.382 21 30.274C21 27.708 21 27.5 18.25 27.5M18.25 34.5C16.564 34.5 15.299 34.323 14.604 33.46C14 32.711 14 31.689 14 30.275L14.75 30.25H14C14 27.38 14.181 26 18.25 26C22.319 26 22.5 27.38 22.5 30.25C22.5 31.688 22.5 32.711 21.896 33.46C21.201 34.323 19.936 34.5 18.25 34.5" fill="#011632"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.25 27.5C26.5 27.5 26.5 27.708 26.5 30.25V30.275C26.5 31.382 26.5 32.182 26.771 32.52C27.036 32.848 27.823 33 29.25 33C30.677 33 31.464 32.847 31.729 32.519C32 32.182 32 31.382 32 30.274C32 27.708 32 27.5 29.25 27.5M29.25 34.5C27.564 34.5 26.299 34.323 25.604 33.46C25 32.711 25 31.689 25 30.275L25.75 30.25H25C25 27.38 25.181 26 29.25 26C33.319 26 33.5 27.38 33.5 30.25C33.5 31.688 33.5 32.711 32.896 33.46C32.201 34.323 30.936 34.5 29.25 34.5" fill="#011632"/>
-                </svg>
-            </button>
-        </div>
+<nav
+  class="md:bg-primary md:shadow-md lg:mx-16 mx-4 md:my-4 my-1 py-4 rounded-full"
+>
+  <div
+    class="container mx-auto flex justify-between items-center px-8 bg-primary md:py-0 py-4 rounded-full"
+  >
+    <!-- Logo -->
+    <div>
+      <a href="/">
+        <img
+          class="w-36 h-auto object-cover"
+          src="{% static 'logo.png' %}"
+          alt="logo"
+        />
+      </a>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#99e889] shadow-lg rounded-3xl mt-2 pb-1">
-        <ul class="px-4 py-4 space-y-2 text-gray-600">
-            <li><a href="#" class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600">Home</a></li>
-            <li><a href="#" class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600">About</a></li>
-            <li><a href="#" class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600">Services</a></li>
-            <li><a href="#" class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600">Contact</a></li>
-            <li>
-                <a href="#" class="px-7 block py-3 text-dark font-semibold text-base bg-primary hover:bg-[#faebb8] rounded-full">Book Now</a>
-            </li>
+    <!-- Desktop Menu Links -->
+    <ul class="hidden md:flex lg:space-x-10 space-x-6 text-gray-600">
+      <li>
+        <a
+          href="{% url 'home:home' %}"
+          class="font-medium text-base text-dark hover:text-gray-600 {% if request.path == '/' %}active-link{% endif %}"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="#" class="font-medium text-base text-dark hover:text-gray-600"
+          >About</a
+        >
+      </li>
+      <li>
+        <a href="#" class="font-medium text-base text-dark hover:text-gray-600"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a href="#" class="font-medium text-base text-dark hover:text-gray-600"
+          >Contact</a
+        >
+      </li>
+    </ul>
 
-        </ul>
+    <!-- Right Button for Desktop -->
+    <div class="flex space-x-5 items-center">
+      <img
+        class="hidden md:flex object-cover w-12 h-auto rounded-full"
+        src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg?t=st=1731076299~exp=1731079899~hmac=8a1ceaf94552b0a683e17c2e5c50c4a569445bdde2f16b8ec3c4599fb5587f37&w=740"
+        alt="user-avatar"
+      />
+      <a
+        href="#"
+        class="hidden md:inline-block px-7 py-3 text-dark font-semibold text-base bg-secondary hover:bg-[#86d676] rounded-full"
+        >Book Now</a
+      >
     </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden flex space-x-2 items-center">
+      <img
+        class="object-cover w-10 h-10 rounded-full"
+        src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg?t=st=1731076299~exp=1731079899~hmac=8a1ceaf94552b0a683e17c2e5c50c4a569445bdde2f16b8ec3c4599fb5587f37&w=740"
+        alt="user-avatar"
+      />
+      <button
+        onclick="toggleMobileMenu()"
+        class="text-gray-600 focus:outline-none"
+      >
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 48 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="48" height="50" rx="10" fill="#89DB7B" />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.25 16.5C15.5 16.5 15.5 16.708 15.5 19.25V19.275C15.5 20.382 15.5 21.182 15.771 21.52C16.036 21.848 16.823 22 18.25 22C19.677 22 20.464 21.847 20.729 21.519C21 21.182 21 20.382 21 19.274C21 16.708 21 16.5 18.25 16.5M18.25 23.5C16.564 23.5 15.299 23.323 14.604 22.46C14 21.711 14 20.689 14 19.275L14.75 19.25H14C14 16.38 14.181 15 18.25 15C22.319 15 22.5 16.38 22.5 19.25C22.5 20.688 22.5 21.711 21.896 22.46C21.201 23.323 19.936 23.5 18.25 23.5"
+            fill="#011632"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M29.25 16.5C26.5 16.5 26.5 16.708 26.5 19.25V19.275C26.5 20.382 26.5 21.182 26.771 21.52C27.036 21.848 27.823 22 29.25 22C30.677 22 31.464 21.847 31.729 21.519C32 21.182 32 20.382 32 19.274C32 16.708 32 16.5 29.25 16.5M29.25 23.5C27.564 23.5 26.299 23.323 25.604 22.46C25 21.711 25 20.689 25 19.275L25.75 19.25H25C25 16.38 25.181 15 29.25 15C33.319 15 33.5 16.38 33.5 19.25C33.5 20.688 33.5 21.711 32.896 22.46C32.201 23.323 30.936 23.5 29.25 23.5"
+            fill="#011632"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.25 27.5C15.5 27.5 15.5 27.708 15.5 30.25V30.275C15.5 31.382 15.5 32.182 15.771 32.52C16.036 32.848 16.823 33 18.25 33C19.677 33 20.464 32.847 20.729 32.519C21 32.182 21 31.382 21 30.274C21 27.708 21 27.5 18.25 27.5M18.25 34.5C16.564 34.5 15.299 34.323 14.604 33.46C14 32.711 14 31.689 14 30.275L14.75 30.25H14C14 27.38 14.181 26 18.25 26C22.319 26 22.5 27.38 22.5 30.25C22.5 31.688 22.5 32.711 21.896 33.46C21.201 34.323 19.936 34.5 18.25 34.5"
+            fill="#011632"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M29.25 27.5C26.5 27.5 26.5 27.708 26.5 30.25V30.275C26.5 31.382 26.5 32.182 26.771 32.52C27.036 32.848 27.823 33 29.25 33C30.677 33 31.464 32.847 31.729 32.519C32 32.182 32 31.382 32 30.274C32 27.708 32 27.5 29.25 27.5M29.25 34.5C27.564 34.5 26.299 34.323 25.604 33.46C25 32.711 25 31.689 25 30.275L25.75 30.25H25C25 27.38 25.181 26 29.25 26C33.319 26 33.5 27.38 33.5 30.25C33.5 31.688 33.5 32.711 32.896 33.46C32.201 34.323 30.936 34.5 29.25 34.5"
+            fill="#011632"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-[#99e889] shadow-lg rounded-3xl mt-2 pb-1"
+  >
+    <ul class="px-4 py-4 space-y-2 text-gray-600">
+      <li>
+        <a
+          href="#"
+          class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="px-4 py-2 block font-medium text-base text-dark hover:text-gray-600"
+          >Contact</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="px-7 block py-3 text-dark font-semibold text-base bg-primary hover:bg-[#faebb8] rounded-full"
+          >Book Now</a
+        >
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <script src="{% static 'navbar.js' %}"></script>

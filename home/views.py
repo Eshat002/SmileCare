@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import ContactForm
 from .models import Contact
-
+from .models import Article
 
 def home(request):
     context={'form':ContactForm}
@@ -87,6 +87,11 @@ def contact_form_view(request):
     return render(request, 'contact.html', {'form': form})
 
 
+ 
+ 
+
+
+
 
 #model form view
 # def contact_form_view(request):
@@ -143,3 +148,9 @@ def contact_form_view(request):
 #     # For GET requests, render an empty form
 #     form = ContactForm()
 #     return render(request, 'contact.html', {'form': form})
+
+
+def articles(request):
+    """Return articles dynamically for HTMX."""
+    articles = Article.objects.all()
+    return render(request, 'partials/article_list.html', {'articles': articles})

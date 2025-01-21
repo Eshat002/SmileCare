@@ -152,5 +152,5 @@ def contact_form_view(request):
 
 def articles(request):
     """Return articles dynamically for HTMX."""
-    articles = Article.objects.all()
+    articles = Article.objects.all()[:10]
     return render(request, 'partials/article_list.html', {'articles': articles})

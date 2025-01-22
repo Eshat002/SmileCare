@@ -8,7 +8,7 @@ import re
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['name', 'phone']
+        fields = ["name", "phone"]
         # widgets = {
         #     'name': forms.TextInput(attrs={
         #         'placeholder': 'Enter Your Name',
@@ -21,13 +21,13 @@ class ContactForm(forms.ModelForm):
         # }
 
     def clean_phone(self):
-        phone = self.cleaned_data.get('phone')
-        if not re.match(r'^\+?[0-9\s\-()]*$', phone):
-            raise ValidationError('Invalid phone number format.')
+        phone = self.cleaned_data.get("phone")
+        if not re.match(r"^\+?[0-9\s\-()]*$", phone):
+            raise ValidationError("Invalid phone number format.")
         return phone
 
 
-#regular form
+# regular form
 # class ContactForm(forms.Form):
 #     name = forms.CharField(
 #         max_length=100,

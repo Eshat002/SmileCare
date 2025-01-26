@@ -48,11 +48,11 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    slug = models.SlugField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=False)
 
     featured_image = models.ImageField(
         upload_to="featured_images/",
-        default="featured_images/default_image.png",
+        default="featured_images/default_image.jpg",
         validators=[FileExtensionValidator(["png", "jpg", "jpeg", "gif"])],
    
     )

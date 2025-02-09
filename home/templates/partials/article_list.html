@@ -31,11 +31,16 @@
     <div class="container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {% for article in articles %}
-          <div class="bg-white shadow-lg rounded-lg p-6">
-            <img src="{{article.featured_image.url}}" alt="image">
-            <h2 class="text-xl font-semibold text-gray-800">{{ article.title }}</h2>
-            <p class="text-gray-600 mt-2">{{ article.content |truncatechars:100  }}</p>
-            <small class="text-gray-500 block mt-4">Published on {{ article.created_at }}</small>
+          <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between h-full">
+            <div>
+              <img class="w-full h-48 object-cover" src="{{ article.featured_image.url }}" alt="image">
+              <a href="">{{ article.category }}</a>
+              <h2 class="text-xl font-semibold text-gray-800">{{ article.title | truncatechars:20 }}</h2>
+              <p class="text-gray-600 mt-2">{{ article.content | truncatechars:80 }}</p>
+            </div>
+            <div class="flex justify-end mt-auto">
+              <small class="text-gray-500 block mt-4">~{{ article.author }}</small>
+            </div>
           </div>
         {% empty %}
           <p class="col-span-4 text-center text-gray-600">No articles available.</p>
@@ -43,8 +48,9 @@
       </div>
     </div>
     
+    
     <!-- btn-containter -->
-    <div>
+    <div class="text-center">
       <button
         class="bg-secondary text-dark font-semibold text-base px-4 py-3 rounded-lg"
       >

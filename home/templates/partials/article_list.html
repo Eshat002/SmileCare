@@ -1,10 +1,10 @@
 {% load static %}
 <section
-  class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 px-8 bg-primary rounded-xl py-16"
+  class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 sm:px-8 bg-primary rounded-xl py-16"
 >
   <div class="container mx-auto sm:px-8 px-6 xl:gap-0 gap-8">
     <!-- headline-container -->
-    <div class="flex justify-between">
+    <div class="flex flex-col sm:flex-row sm:justify-between">
       <div>
         <c-gHeadline>
           <h2
@@ -29,7 +29,7 @@
     </div>
     <!-- article-list-container -->
     <div class="mx-auto py-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {% for article in articles %}
           <div class="bg-white shadow-lg rounded-lg p-5 flex flex-col justify-between h-full">
             <div>

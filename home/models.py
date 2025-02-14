@@ -8,6 +8,14 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
+class FAQ(models.Model):
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question
+
+
 class Contact(models.Model):
     name = models.CharField(
         max_length=100,

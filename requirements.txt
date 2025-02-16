@@ -3,6 +3,7 @@ Django==5.1.6
 django-browser-reload==1.18.0
 django-cotton==1.5.2
 django-tailwind==3.8.0
+djhtml==3.0.7
 pillow==11.1.0
 python-decouple==3.8
 sqlparse==0.5.3

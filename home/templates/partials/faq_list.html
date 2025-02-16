@@ -1,0 +1,61 @@
+{% load static %}
+
+<section
+  class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 sm:px-8 bg-primary rounded-xl py-16"
+>
+  <div class="container mx-auto sm:px-8 px-6 xl:gap-0 gap-8">
+ 
+<!-- faq-list-container -->
+
+<!-- <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
+
+  {% for faq in faqs %}
+      <div class="border-b border-gray-300 py-2">
+          <button class="w-full text-left font-medium text-gray-700 hover:text-blue-600 flex justify-between items-center"
+                  hx-on:click="this.nextElementSibling.classList.toggle('hidden'); 
+                               this.nextElementSibling.classList.toggle('max-h-96'); 
+                               this.querySelector('.icon').textContent = this.querySelector('.icon').textContent === '+' ? '−' : '+'">
+              {{ faq.question }}
+              <span class="icon text-xl transition-transform duration-300 ease-in-out">+</span>
+          </button>
+          <div class="hidden max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-gray-600 mt-2">
+              {{ faq.answer }}
+          </div>
+      </div>
+  {% endfor %}
+</div> -->
+
+    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
+
+      {% for faq in faqs %}
+        <div class="border-b border-gray-300 py-2">
+          <button class="w-full text-left font-medium text-gray-700 hover:text-blue-600 flex justify-between items-center"
+                  hx-on:click="toggleFAQ(this)">
+            {{ faq.question }}
+            <span class="icon text-xl transition-transform duration-300 ease-in-out">+</span>
+          </button>
+          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-600 mt-2">
+            {{ faq.answer }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <script>
+      function toggleFAQ(button) {
+        let answer = button.nextElementSibling;
+        let icon = button.querySelector('.icon');
+
+        if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
+          answer.style.maxHeight = "0px"; // Collapse
+          icon.textContent = "+";
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px"; // Expand
+          icon.textContent = "−";
+        }
+      }
+    </script>
+  </div>
+</section>

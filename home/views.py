@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import ContactForm
 from .models import Contact
-from .models import Article
+from .models import Article, FAQ
 
 
 def home(request):
@@ -157,3 +157,9 @@ def articles(request):
     """Return articles dynamically for HTMX."""
     articles = Article.objects.all()[:10]
     return render(request, "partials/article_list.html", {"articles": articles})
+
+
+def faq(request):
+    faqs = FAQ.objects.all()
+    print("ss",faq)
+    return render(request, "partials/faq_list.html", {"faqs": faqs})

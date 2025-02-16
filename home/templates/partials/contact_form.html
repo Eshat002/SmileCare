@@ -23,7 +23,7 @@
       class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-0 focus:border-gray-300"
     />
     {% for error in form.name.errors %}
-    <div class="text-red-500 text-sm mt-1">{{ error }}</div>
+      <div class="text-red-500 text-sm mt-1">{{ error }}</div>
     {% endfor %}
   </div>
 
@@ -40,14 +40,14 @@
       class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-0 focus:border-gray-300"
     />
     {% for error in form.phone.errors %}
-    <div class="text-red-500 text-sm mt-1">{{ error }}</div>
+      <div class="text-red-500 text-sm mt-1">{{ error }}</div>
     {% endfor %}
   </div>
 
   {% if message %}
-  <div id="success-message" class="text-green-500 text-sm font-medium mb-4">
-    {{ message }}
-  </div>
+    <div id="success-message" class="text-green-500 text-sm font-medium mb-4">
+      {{ message }}
+    </div>
   {% endif %}
 
   <button
@@ -59,11 +59,11 @@
 </form>
 
 {% if clear_form %}
-<script>
+  <script>
   // Clear the form fields after successful submission
-  document.querySelector("#id_name").value = "";
-  document.querySelector("#id_phone").value = "";
-</script>
+    document.querySelector("#id_name").value = "";
+    document.querySelector("#id_phone").value = "";
+  </script>
 {% endif %}
 
 <!-- <form

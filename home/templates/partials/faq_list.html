@@ -1,11 +1,34 @@
 {% load static %}
 
 <section
-  class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 sm:px-8 bg-primary rounded-xl py-16"
+  class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 sm:px-8 rounded-xl py-4"
 >
-  <div class="container mx-auto sm:px-8 px-6 xl:gap-0 gap-8">
- 
-<!-- faq-list-container -->
+  <div class="container max-w-2xl mx-auto bg-white rounded-lg p-3">
+      <c-gHeadline>
+        <h2
+          class="font-bold sm:text-4xl text-3xl text-dark capitalize sm:leading-snug"
+        >
+        Frequently Ask <span class="text-secondary">Question</span>
+        </h2>
+      </c-gHeadline>
+      <p class="font-normal text-base text-primaryGray my-6">We use only the best quality materials on the market in order to provide the best products to our patients.</p>
+
+      {% for faq in faqs %}
+      <div class="border-b border-gray-300 py-2 mt-4">
+        <button class="w-full font-semibold text-primaryGray text-base  text-left flex justify-between items-center p-2"
+                hx-on:click="toggleFAQ(this)">
+          {{ faq.question }}
+          <span class="icon text-xl transition-transform duration-300 ease-in-out">+</span>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-600">
+          {{ faq.answer }}
+        </div>
+      </div>
+    {% endfor %}
+    
+    </div>
+
+    <!-- faq-list-container -->
 
 <!-- <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
   <h2 class="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
@@ -26,36 +49,22 @@
   {% endfor %}
 </div> -->
 
-    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Frequently Asked Questions</h2>
-
-      {% for faq in faqs %}
-        <div class="border-b border-gray-300 py-2">
-          <button class="w-full text-left font-medium text-gray-700 hover:text-blue-600 flex justify-between items-center"
-                  hx-on:click="toggleFAQ(this)">
-            {{ faq.question }}
-            <span class="icon text-xl transition-transform duration-300 ease-in-out">+</span>
-          </button>
-          <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out text-gray-600 mt-2">
-            {{ faq.answer }}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
     <script>
-      function toggleFAQ(button) {
-        let answer = button.nextElementSibling;
-        let icon = button.querySelector('.icon');
+  function toggleFAQ(button) {
+  let answer = button.nextElementSibling;
+  let icon = button.querySelector('.icon');
 
-        if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
-          answer.style.maxHeight = "0px"; // Collapse
-          icon.textContent = "+";
-        } else {
-          answer.style.maxHeight = answer.scrollHeight + "px"; // Expand
-          icon.textContent = "−";
-        }
-      }
+  if (answer.classList.contains("max-h-0")) {
+    answer.classList.remove("max-h-0");
+    answer.classList.add("max-h-[300px]", "p-2"); // Adjust height
+    icon.textContent = "−";
+  } else {
+    answer.classList.remove("max-h-[300px]", "p-2");
+    answer.classList.add("max-h-0");
+    icon.textContent = "+";
+  }
+}
+
     </script>
   </div>
 </section>

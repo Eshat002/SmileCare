@@ -17,6 +17,8 @@ DEBUG = config("DEBUG")
 ALLOWED_HOSTS = ["*"]
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [

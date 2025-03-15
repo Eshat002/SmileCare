@@ -4,5 +4,5 @@
 
 /* Custom active-link class */
 .active-link {
-  @apply text-green-600 font-bold;
+  @apply text-green-500 font-bold;
 }

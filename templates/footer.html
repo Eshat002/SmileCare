@@ -1,1 +1,33 @@
-<h2>footer</h2>
+{% load static %}
+<div class ="text-dark pt-20 pb-6">
+    <div class="lg:px-20 px-10">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-6 border-b py-8">
+            <!-- Logo Section -->
+            <div>
+                <a href="/">
+                    <img
+                      class="w-36 h-auto object-cover"
+                      src="{% static 'logo.png' %}"
+                      alt="logo"
+                    />
+                  </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="flex flex-col md:flex-row text-center md:text-left space-y-2 md:space-y-0 md:space-x-6 text-sm">
+                    <li><a href="/" class="font-medium text-base text-dark hover:text-gray-600">Home</a></li>
+                    <li><a href="/about" class="font-medium text-base text-dark hover:text-gray-600">About</a></li>
+                    <li><a href="/services" class="font-medium text-base text-dark hover:text-gray-600">Services</a></li>
+                    <li><a href="/contact" class="font-medium text-base text-dark hover:text-gray-600">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="mt-6 text-center text-gray-400 text-xs">
+            <p>© 2025 Your Company. All rights reserved.</p>
+            <p><a href="/privacy-policy" class="hover:text-gray-300">Privacy Policy</a> | <a href="/terms" class="hover:text-gray-300">Terms of Service</a></p>
+        </div>
+    </div>
+</div>

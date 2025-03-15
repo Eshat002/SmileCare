@@ -1,10 +1,13 @@
 {% load static %}
 <section
   class="lg:mx-10 mx-0 lg:my-12 sm:my-8 my-3 sm:px-8 bg-primary rounded-xl py-16"
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-easing="ease-in-out"
 >
   <div class="container mx-auto sm:px-8 px-6 xl:gap-0 gap-8">
     <!-- headline-container -->
-    <div class="flex flex-col sm:flex-row sm:justify-between">
+    <div class="flex flex-col sm:flex-row sm:justify-between" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <div>
         <c-gHeadline>
           <h2
@@ -22,6 +25,7 @@
       <div>
         <button
           class="bg-secondary text-dark font-semibold text-base px-4 py-3 rounded-lg"
+          data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"
         >
           View All
         </button>
@@ -31,7 +35,8 @@
     <div class="mx-auto py-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {% for article in articles %}
-          <div class="bg-white shadow-lg rounded-lg p-5 flex flex-col justify-between h-full">
+          <div class="bg-white shadow-lg rounded-lg p-5 flex flex-col justify-between h-full"
+            data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ forloop.counter|add:200 }}">
             <div>
               <img class="w-full h-48 object-cover mb-7 rounded-lg" src="{{ article.featured_image.url }}" alt="image">
               <a class="font-medium text-dark text-base bg-secondary px-3 py-2 rounded" href="">{{ article.category }}</a>
@@ -48,11 +53,11 @@
       </div>
     </div>
 
-
     <!-- btn-containter -->
     <div class="text-center">
       <button
         class="bg-secondary text-dark font-semibold text-base px-4 py-3 rounded-lg mt-5"
+        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"
       >
         Check out more
       </button>

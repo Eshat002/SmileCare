@@ -1,15 +1,25 @@
 {% load static %}
-<section class="lg:mx-20 mx-0 lg:my-12 sm:my-8 my-3 bg-gradient-to-r from-[#FEF0C3] to-[#4ade80] rounded-xl">
+<section
+  class="lg:mx-20 mx-0 lg:my-12 sm:my-8 my-3 bg-gradient-to-r from-[#FEF0C3] to-[#4ade80] rounded-xl"
+  data-aos="fade-up"
+  data-aos-duration="1200"
+  data-aos-easing="ease-in-out"
+>
   <div
     class="container mx-auto sm:px-12 sm:p-12 p-8 flex flex-col-reverse lg:flex-row md:gap-12 gap-6 justify-between items-center"
   >
     <!-- Left Div -->
-    <div class="flex flex-col gap-4 lg:w-1/2 w-full">
+    <div
+      class="flex flex-col gap-4 lg:w-1/2 w-full"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+    >
       <c-gHeadline>
         <h2
           class="font-bold sm:text-4xl text-3xl text-dark capitalize sm:leading-snug leading-10"
         >
-        Dental Website that's gonna shake the game rules up.
+          Dental Website that's gonna shake the game rules up.
         </h2>
       </c-gHeadline>
       <p class="font-normal text-lg text-primaryGray mb-4">
@@ -17,19 +27,26 @@
         the best products to our patients, So don’t worry about anything and
         book yourself.
       </p>
-    
-       <!-- btn-containter -->
-    <div>
+
+      <!-- btn-container -->
+      <div>
         <button
           class="bg-secondary text-dark font-semibold text-base px-6 py-3 rounded-lg mt-5"
-        > 
-          Learn More  
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          Learn More
         </button>
       </div>
-   
     </div>
     <!-- Right Div -->
-    <div class="flex lg:justify-end justify-end items-center lg:w-1/2 w-full">
+    <div
+      class="flex lg:justify-end justify-end items-center lg:w-1/2 w-full"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="600"
+    >
       <img
         class="xl:w-1/2 lg:w-full sm:w-1/2 w-full h-auto mt-2 shadow-lg rounded-lg"
         src="{% static 'Images/banner.png' %}"

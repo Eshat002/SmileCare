@@ -1,10 +1,16 @@
 {% load static %}
-<section class="lg:mx-20 mx-0 lg:my-12 sm:my-8 my-3">
+<section class="lg:mx-20 mx-0 lg:my-12 sm:my-8">
   <div
     class="container mx-auto sm:px-8 px-6 flex flex-col-reverse lg:flex-row md:gap-12 gap-6 justify-between items-center"
   >
     <!-- Left Div -->
-    <div class="flex flex-col gap-4 lg:w-1/2 w-full">
+    <div 
+      class="flex flex-col gap-4 lg:w-1/2 w-full"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      data-aos-delay="100"
+      data-aos-easing="ease-in-out"
+    >
       <c-gHeadline>
         <h2
           class="font-bold sm:text-4xl text-3xl text-dark capitalize sm:leading-snug leading-10"
@@ -25,8 +31,15 @@
         <c-bookBtn />
       </div>
     </div>
+    
     <!-- Right Div -->
-    <div class="flex lg:justify-end justify-end items-center lg:w-1/2 w-full">
+    <div 
+      class="flex lg:justify-end justify-end items-center lg:w-1/2 w-full"
+      data-aos="fade-left"
+      data-aos-duration="800"
+      data-aos-delay="300"
+      data-aos-easing="ease-in-out"
+    >
       <img
         class="xl:w-2/3 lg:w-full sm:w-1/2 w-full h-auto mt-2 shadow-lg rounded-lg"
         src="{% static 'Images/heathierSmilesImage.png' %}"

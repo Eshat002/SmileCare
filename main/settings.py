@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home",
     # third party
-    # "django_htmx",
+    "django_htmx",
     "tailwind",
     "theme",
     "django_browser_reload",
@@ -44,6 +44,7 @@ INTERNAL_IPS = [
 ]
 
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+
 
 
 MIDDLEWARE = [
